@@ -1,0 +1,84 @@
+% This template was originally by R. Jacob Vogelstein
+% Updated on March 1, 2010 by Noah J. Cowan
+
+
+\documentclass[12pt,oneside,final]{thesis}
+
+\usepackage{cite}
+\usepackage{amsmath,amsfonts}
+\usepackage{graphicx}
+\graphicspath{{./figs/}}
+\usepackage{fixltx2e}
+\usepackage{array}
+% wrapfig is fragile: use sparingly
+\usepackage{wrapfig} 
+%\usepackage{times}  % Use this for ugly fonts
+
+
+\usepackage{fancyhdr}    % Use nice looking headers along with the required footer page numbers   
+%\usepackage[hypertex]{hyperref}
+
+%Define the header/footer style
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{15pt}
+\lhead{\leftmark}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{plain}{% Redefine ``plain'' style for chapter boundaries
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[C]{\thepage} % except the center
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+
+%\tolerance=10000
+
+%\makeglossary % enable the glossary
+
+\begin{document}
+
+\title{JHU THESIS TEMPLATE}
+\author{R. Jacob Vogelstein}
+\degreemonth{May}
+\degreeyear{2007} 
+\dissertation
+\doctorphilosophy
+\copyrightnotice
+
+
+% add your chapters, best way is to have separate TeX files for each chapter
+\include{chapter0}
+\include{chapter1}
+
+\include{appendix}
+
+%% REFERENCES
+
+% if you use BIBTEX
+\bibliographystyle{IEEEtran}
+\bibliography{thesis}
+
+\begin{vita}
+
+\begin{wrapfigure}{l}{0pt}
+\includegraphics[width=2in,height=2.5in,clip,keepaspectratio]{rjvheadshot}
+\end{wrapfigure}
+
+R.\ Jacob Vogelstein received the Sc.\ B.\ degree in Bio-Electrical Engineering 
+from Brown University in 2000,  and enrolled in the Biomedical Engineering 
+Ph.D.\ program at Johns Hopkins University in 2001.  He was inducted into the 
+Tau Beta Pi and Sigma Xi honor societies in 1999, won the Brown University 
+Engineering Department's Outstanding Student Award in 2000, and received a 
+National Science Foundation Graduate Research Fellowship in 2002.  His research 
+focuses on neuromorphic and neuroprosthetic devices, and his papers have been 
+finalists in the student paper competitions at the 2004 IEEE International 
+Conference of the Engineering in Medicine and Biology Society and the 2004 IEEE 
+International Conference on Electronics, Circuits and Systems.
+
+Starting in June 2007, Jacob will work on the ``Revolutionizing Prosthetics 2009'' 
+project at the Johns Hopkins University Applied Physics Laboratory in Laurel,
+MD, where he will help to create the next-generation of upper-arm
+neuroprostheses.  
+
+\end{vita}
+\end{document}
