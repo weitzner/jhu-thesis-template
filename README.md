@@ -28,27 +28,27 @@ Extra compiles may be needed for accurate TOC, List of Figures, etc.
 What's Included?
 ----------------
 
-* `thesis.cls` -- The TeX class file that contains many of the formatting commands.  
+* `thesis.cls` – The TeX class file that contains many of the formatting commands.  
 
-* `jhu12.clo` -- The 12pt font "class option" file that contains the specific formatting commands for a 12-point font JHU thesis document.
+* `jhu12.clo` – The 12pt font "class option" file that contains the specific formatting commands for a 12-point font JHU thesis document.
 
-* `IEEEtran.bst` -- A recent version (as of May 2007) of the BibTeX style file for formatting citations in the style used by IEEE Transactions journals.  
+* `IEEEtran.bst` – A recent version (as of May 2007) of the BibTeX style file for formatting citations in the style used by IEEE Transactions journals.  
 
-* `thesis.bib` -- A sample bibliography file in BibTeX format.
+* `thesis.bib` – A sample bibliography file in BibTeX format.
 
-* `root.tex` -- The "root" LaTeX file that contains the LaTeX preamble as well as "include" statements for each of your thesis chapters.
+* `root.tex` – The "root" LaTeX file that contains the LaTeX preamble as well as "include" statements for each of your thesis chapters.
 
-* `chapter0.tex` -- A sample chapter with some formatting/header options.
+* `chapter0.tex` – A sample chapter with some formatting/header options.
 
-* `chapter1.tex` -- Another sample chapter with some different formatting/header options.
+* `chapter1.tex` – Another sample chapter with some different formatting/header options.
 
-* `rjvheadshot.jpg` -- A sample graphic with the right dimesions for the headshot used on the Vita page.
+* `rjvheadshot.jpg` – A sample graphic with the right dimesions for the headshot used on the Vita page.
 
-* `root.pdf` -- A compiled version of the sample document.
+* `root.pdf` – A compiled version of the sample document.
 
-* `jhu10.clo` -- **USE AT YOUR OWN RISK** -- An old version of a 10pt font "class option" file that DOES NOT FULLY COMPLY with the JHU thesis formatting requirements, but is better than nothing if you want to use a smaller font.
+* `jhu10.clo` – **USE AT YOUR OWN RISK** – An old version of a 10pt font "class option" file that DOES NOT FULLY COMPLY with the JHU thesis formatting requirements, but is better than nothing if you want to use a smaller font.
 
-* `jhu11.clo` -- **USE AT YOUR OWN RISK** -- An old version of an 11pt font "class option" file that DOES NOT FULLY COMPLY with the JHU thesis formatting requirements, but is better than nothing if you want to use a smaller font.
+* `jhu11.clo` – **USE AT YOUR OWN RISK** – An old version of an 11pt font "class option" file that DOES NOT FULLY COMPLY with the JHU thesis formatting requirements, but is better than nothing if you want to use a smaller font.
 
 Figures
 -------
