@@ -41,6 +41,33 @@ This is a subsection.
 % \label{fig:twofigures}
 % \end{figure}
 
+% currsize is not set in the long table environment, so we need to set it before we set it up.
+\makeatletter
+\let\@currsize\normalsize
+\makeatother
+
+% tabular environments are set to be single-spaced in the  thesis class,  but long tables do not use tabular
+% to get around this, set the spacing to single spacing at the start of the long table environment, and set it back to double-spacing at the end of it
+\ssp
+\begin{longtable}{cc}
+\caption[This is what I want to have in the LOT]{This is a caption.} \label{tab:pfams} \\
+\hline
+A & B \\
+\hline
+\endfirsthead
+\multicolumn{2}{@{}l}{\textbf{Table \thetable} \ldots continued} \\
+\hline
+A & B \\
+\hline
+\endhead
+a1 & b1 \\
+a2 & b2 \\
+a3 & b3 \\
+a4 & b4 \\
+\hline
+\end{longtable}
+\dsp
+
 \section[Optional table of contents heading]{Section with\\linebreaks in\\the
 name}
 
