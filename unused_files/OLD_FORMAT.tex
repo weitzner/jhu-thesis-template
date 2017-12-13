@@ -1,0 +1,121 @@
+%% Available at http://www.biostat.jhsph.edu/research/thesis.shtml
+
+% 10-26-98
+%
+% File "format.tex" contains the university's thesis format. It will
+% do the following things automatically if it is executed:
+%
+% 1. Create the front page of dissertation
+% 2. Create Table of Contents
+% 3. Create List of Tables
+% 4. Create List of Figures
+% 5. Set page numbers accordingly (Roman and Arabic)
+% 6. Set the required margins for all pages
+%
+% To use this file, you first need to write each part of thesis, such as
+% abstract, acknowle, chap1, etc., as individual LaTex files. Example of
+% such files can be obtained from Chuanfa Guo upon request.
+% It takes about two or three days to learn how to write latex file.
+% Once all parts of thesis are done, you execute this file in LaTex.
+% It will read each individual files and put them together for you in
+% the university's thesis format. The output is the whole dissertation
+% ready for submittal. You will find that it is easy to use this
+% "thesis format" file.
+%
+% Good luck and have fun.
+%
+% Chuanfa Guo
+% (410) 955-0439
+% cguo@hsr.jhsph.edu
+ 
+\documentclass[12pt,psfig]{report}
+ 
+\usepackage{graphics}
+\pagestyle{myheadings}
+%\topmargin=0.25in
+\topmargin=0.05in
+\textheight=8.15in
+\textwidth=5.6in
+\oddsidemargin=0.7in
+\raggedbottom
+\newdimen \jot \jot=5mm
+\brokenpenalty=10000
+ 
+\begin{document}
+ \newcommand{\bm}[1]{ \mbox{\boldmath $ #1 $} }
+ \newcommand{\bin}[2]{\left(\begin{array}{@{}c@{}} #1 \\ #2
+             \end{array}\right) }
+ \renewcommand{\contentsname}{Table of Contents}
+ \baselineskip=24pt
+ 
+% Create cover page of dissertation !
+\pagenumbering{roman}
+\thispagestyle{empty}
+\begin{center}
+\vspace*{.25in}
+{\bf\LARGE{Title of Dissertation\\   % put the title here!
+           title continuing here}}\\
+\vspace*{.75in}
+{\bf by} \\*[18pt]
+\vspace*{.6in}
+{\bf Firstname M. Lastname}\\
+\vspace*{1.2in}
+{\bf A dissertation submitted to The Johns Hopkins University\\
+in conformity with the requirements for the degree of\\
+Doctor of Philosophy}\\
+\vspace*{.75in}
+{\bf Baltimore, Maryland} \\
+{\bf September, 1998} \\     % change it accordingly!
+\vspace*{.5in}
+\begin{small}
+{\bf Copyright 1998 by Your Name} \\ % change the year if needed!
+{\bf All rights reserved}
+\end{small}
+\end{center}
+ 
+\newpage
+\pagestyle{plain}
+\include{abstract}
+\include{acknowle}
+\baselineskip=24pt
+\tableofcontents
+% for the three lines below, change the page numbers if needed!
+\addtocontents{toc}{\contentsline {chapter}{Table of Contents}{vi}}
+\addtocontents{toc}{\contentsline {chapter}{List of Tables}{x}}
+\addtocontents{toc}{\contentsline {chapter}{List of Figures}{xii}}
+\listoftables
+\listoffigures
+ 
+%\newpage
+\chapter{Introduction}\label{chap1}
+\pagenumbering{arabic}
+\pagestyle{myheadings}
+\thispagestyle{myheadings}
+\input{chap1}
+ 
+\chapter{Name of Chapter Two}\label{chap2}
+\thispagestyle{myheadings}
+\input{chap2}
+ 
+\chapter{Name of Chapter Three}\label{chap3}
+\thispagestyle{myheadings}
+\input{chap3}
+ 
+\chapter{Name of Chapter Four}\label{chap4}
+\thispagestyle{myheadings}
+\input{chap4}
+ 
+\chapter{Name of Chapter Five}\label{chap5}
+\thispagestyle{myheadings}
+\input{chap5}
+ 
+\chapter{Name of Chapter Six}\label{chap6}
+\thispagestyle{myheadings}
+\input{chap6}
+ 
+\include{refer}    % references
+\include{vitae}
+ 
+\end{document}
+ 
+
