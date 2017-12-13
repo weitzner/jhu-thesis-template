@@ -1,0 +1,50 @@
+\chapter{Rnw example chapter}
+\label{chap:rnw}
+
+<<label=opts, results='hide', echo=FALSE, message = FALSE, warning=FALSE>>=
+library(knitr)
+opts_chunk$set(echo=FALSE, prompt=FALSE, message=FALSE, warning=FALSE, comment="", results='hide')
+@
+
+<<label=some_code, echo=FALSE >>=
+## Run some R code
+date <- date()
+@
+
+This document was generated on \Sexpr{date}.
+
+As shown in Figure \ref{fig:some_fig} and in Table \ref{tab:rtab1} we can see that bla bla \citep{B}.
+
+
+<<label=some_fig, fig.cap = '{\\bf Figure title } Rest of description'>>=
+## Run some R code for a figure
+plot(x = rnorm(1000), y = rnorm(1000, sd = 1.5))
+@
+
+
+<<results = 'asis', eval = FALSE>>=
+## You might want to use paste0() if you have multiple pre-generated figures
+## that you want to include
+
+## Change eval to TRUE in the code chunk
+
+figs <- 1:3
+figstr <- paste0('\\begin{figure}
+\\centering
+\\includegraphics[width=0.75\\linewidth,keepaspectratio]{figure/some_fig-', figs', .pdf}
+\\caption{{\\bf Figure title } Rest of description }
+\\label{fig:rfig1}
+\\end{figure}
+')
+cat(figstr)
+@
+
+
+
+<<label=some_tab, results = "asis">>=
+## Example R table
+library('xtable')
+df <- data.frame(A = 1:10, B = round(rnorm(10), 3))
+xtab <- xtable(df, digits = 2, caption = '\\bf{ Table title } Table description', label = 'tab:rtab1')
+print.xtable(xtab, include.rownames = FALSE)
+@

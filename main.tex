@@ -1,0 +1,259 @@
+% This template was originally by R. Jacob Vogelstein
+% Updated on March 1, 2010 by Noah J. Cowan
+% Updated on May 18, 2014 by Brian Weitzner at https://github.com/weitzner/jhu-thesis-template
+% Updated on January 29, 2016 by John Muschelli at https://github.com/muschellij2/PhD_Thesis
+% Updated on April 13, 2016 by Leonardo Collado Torres and available at https://github.com/lcolladotor/jhu-thesis-template. View (read-only) at Overleaf here https://www.overleaf.com/read/tqdzgmrxgbtg
+
+%% It's your responsability to make sure that your thesis complies with 
+%% JHU's formatting rules available at http://guides.library.jhu.edu/etd/formatting
+
+\documentclass[12pt]{report}
+
+%% This was the setup recommended at https://github.com/weitzner/jhu-thesis-template
+% \documentclass[12pt,oneside,final]{thesis}
+
+\pdfminorversion=4\relax
+\pdfobjcompresslevel=0\relax
+%% Followed the information from https://www.overleaf.com/latex/examples/creating-pdf-slash-a-and-pdf-slash-x-files/bbbycnbyqhnm#.Vw6_XBMrLm1 to create a PDF/A file in Overleaf
+\usepackage[a-1b]{pdfx} % Need this to create a PDF/A file
+
+\usepackage{pdfpages}
+
+\pagestyle{myheadings}
+%\topmargin=0.25in
+\topmargin=0.05in
+\textheight=8.15in
+\textwidth=5.6in
+\oddsidemargin=0.7in
+\raggedbottom
+\newdimen \jot \jot=5mm
+\brokenpenalty=10000
+ 
+
+%\usepackage[utf8]{inputenc} % Seems to cause a conflict with fontenc and lmodern
+%\DeclareUnicodeCharacter{00A0}{ }
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % load a font with all the characters
+%\usepackage{hyperref}
+\usepackage{tocbibind} % need this to contents adding for TOC
+\usepackage{setspace}
+\setstretch{1.05}
+\usepackage{RJournal_nogeom} % Changes the colors of links among other things
+%\usepackage[all]{hypcap}
+\usepackage[hypcap=true]{caption}
+\hypersetup{linktocpage}
+\usepackage{amsmath,amssymb,array}
+\usepackage{booktabs}
+\usepackage{subfig}
+
+%% load any required packages here
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{graphics} 
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes,arrows}
+\usepackage{dcolumn}
+% A math shortcut frequently used by John Muschelli
+\newcommand{\bbeta}{\mbox{\boldmath $\beta$}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOI from Segmentation
+% Don't use - needs hyperref
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\makeatletter
+%\providecommand{\doi}[1]{%
+%  \begingroup
+%    \let\bibinfo\@secondoftwo
+%    \urlstyle{rm}%
+%    \href{http://dx.doi.org/#1}{%
+%      doi:\discretionary{}{}{}%
+%      \nolinkurl{#1}%
+%    }%
+%  \endgroup
+%}
+%\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% StartKNITR STUFF -- added by John Muschelli
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%l
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+\makeatletter
+\newcommand\gobblepars{%
+    \@ifnextchar\par%
+        {\expandafter\gobblepars\@gobble}%
+        {}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End KNITR STUFF
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage[
+style = authoryear, 
+sorting = none, 
+dashed = false,
+maxbibnames = 99,
+backend = bibtex,
+natbib = true
+]{biblatex}
+
+% If you want to exclude some portions from the bibliography
+\AtEveryBibitem{
+\clearfield{note}
+\clearfield{month}
+}
+
+
+\usepackage{enumerate}
+
+%\tolerance=10000
+
+%\makeglossary % enable the glossary
+\graphicspath{{rnw_chapter/figure/}{rnw_chapter/}} % change it accordingly!
+
+
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\begin{document}
+
+\newcommand{\bm}[1]{ \mbox{\boldmath $ #1 $} }
+\newcommand{\bin}[2]{\left(\begin{array}{@{}c@{}} #1 \\ #2
+             \end{array}\right) }
+\renewcommand{\contentsname}{Table of Contents}
+\baselineskip=24pt
+ 
+% Create cover page of dissertation !
+\pagenumbering{roman}
+\thispagestyle{empty}
+\begin{center}
+\vspace*{.25in}
+{\bf\LARGE{ JHU Thesis Template title }}\\ % change it accordingly!
+\vspace*{.75in}
+{\bf by} \\*[18pt]
+\vspace*{.2in}
+{\bf Your Name}\\ % change it accordingly!
+\vspace*{1in}
+{\bf A dissertation submitted to The Johns Hopkins University\\
+in conformity with the requirements for the degree of\\
+Doctor of Philosophy }\\
+\vspace*{.75in}
+{\bf Baltimore, Maryland} \\
+{\bf June, 2016} \\     % change it accordingly!
+\vspace*{.5in}
+\begin{small}
+{\bf \copyright{ }2016 by Your Name} \\ % change the year if needed!
+{\bf All rights reserved}
+\end{small}
+\end{center}
+\newpage 
+
+% Add acknowledgements
+\pagestyle{plain}
+\pagenumbering{roman}
+\setcounter{page}{2}
+\include{abstract/abstract}
+\include{committee/committee}
+\include{acknowledgments/acknowledgments}
+
+%\cleardoublepage
+%\newpage 
+\pagestyle{plain}
+\baselineskip=24pt
+\tableofcontents
+% for the three lines below, change the page numbers if needed!
+%\addtocontents{toc}{\contentsline{chapter}{Table of Contents}{iii}}
+%\addtocontents{toc}{\protect\contentsline{chapter}{\protect\numberline{}Table of Contents}{iii}}
+%\addtocontents{toc}{\protect\contentsline{chapter}{\protect\numberline{}List of Tables}{iv}}
+%\addtocontents{toc}{\protect\contentsline{chapter}{\protect\numberline{}List of Figures}{v}}
+\listoftables
+\listoffigures
+
+\cleardoublepage % Needed because our intro chapter doesn't really have anything
+\pagenumbering{arabic}
+
+
+% add your chapters, best way is to have separate TeX files for each chapter
+%\include{chapter0}
+%\include{chapter1}
+
+%% The above was the recommended setup by https://github.com/weitzner/jhu-thesis-template but it's no longer needed
+%% after Muschelli's changes which stores different chapters in their
+%% respective directories. You will still need to add your chapters as
+%% TeX files or Rnw files (see rnw_chapter as an example) and please
+%% remember to update the makefile accordingly.
+
+\begin{refsection}[intro_chapter/intro_chapter.bib]
+\include{intro_chapter/intro_chapter}
+\cleardoublepage
+\printbibliography[title={References}]
+\end{refsection}
+
+%% If using Overleaf, you'll have to upload the resulting tex file & figures
+%% since Overleaf does not support Rnw files right now (April 13, 2016)
+\begin{refsection}[rnw_chapter/rnw_chapter.bib]
+\include{rnw_chapter/rnw_chapter}
+\cleardoublepage
+\printbibliography[title={References}]
+\end{refsection}
+
+\begin{refsection}[conclusion_chapter/conclusion_chapter.bib]
+\include{conclusion_chapter/conclusion_chapter}
+\cleardoublepage
+\printbibliography[title={References}]
+\end{refsection}
+
+
+% CV PDF file downloaded from the moderncv template available at Overleaf
+% https://www.overleaf.com/latex/templates/modern-cv-and-cover-letter-2015-version/sttkgjcysttn#.Vw6PFRMrL65
+\includepdf[pages={-}]{moderncv-2015.pdf}
+
+
+\end{document}
